@@ -1,0 +1,16 @@
+<ion-view view-title="Movies">
+  <ion-content>
+    <label class="item item-input">
+      <input type="text" placeholder="Search">
+    </label>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="movie in movies | orderBy:'-releaseDate'" type="item-text-wrap" href="#/tab/movies/{{movie.$id}}">
+        <img ng-src="{{movie.image}}">
+        <h2>{{movie.name}}</h2>
+        <p> Dvd released {{movie.releaseDate | date:'mediumDate' }}</p>
+        <p>{{movie.description}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
